@@ -1,0 +1,82 @@
+{
+	"version": "1.0.0",
+	"effectiveDate": "2026-02-20",
+	"gracePeriodDays": 7,
+	"provider": {
+		"name": "Orcfax Ltd.",
+		"service": "Orcfax On-Demand"
+	},
+	"pricing": {
+		"currency": "ADA",
+		"updateCostLovelace": 10000,
+		"publishCostLovelace": 5000000
+	},
+	"channel": {
+		"closePeriodMs": 3600000,
+		"minDepositAda": 10
+	},
+	"previousVersion": null,
+	"changelog": [],
+	"clauses": [
+		{
+			"id": "acceptance",
+			"title": "Acceptance",
+			"text": "By opening a payment channel or submitting a request through Orcfax On-Demand, you agree to these Terms of Service. These terms govern the off-chain service layer between you (the consumer) and the provider."
+		},
+		{
+			"id": "service",
+			"title": "Service Description",
+			"text": "Orcfax On-Demand provides realtime price feed data and on-chain publication services via Subbit payment channels on Cardano. Price updates are fetched via GET requests; on-chain publications are submitted via POST requests. The feed listing endpoint remains free to access."
+		},
+		{
+			"id": "pricing",
+			"title": "Pricing",
+			"text": "Service costs are defined in the pricing schedule above. Each request consumes a fixed amount from your payment channel balance. The provider and consumer both compute costs using the same shared rules, ensuring neither party can unilaterally alter pricing."
+		},
+		{
+			"id": "currency",
+			"title": "Currency",
+			"text": "All payments are denominated in ADA. Payment channels are mono-asset, meaning only ADA is accepted as the channel currency."
+		},
+		{
+			"id": "ious",
+			"title": "Payment Authorization (IOUs)",
+			"text": "Each paid request must include an IOU — a signed payment authorization created with your Ed25519 signing key. An IOU authorizes the provider to claim up to a specified amount from your escrowed funds. IOUs are monotonically increasing: each new IOU authorizes a cumulative total, not an incremental amount. The provider may only claim funds up to the amount authorized by your latest valid IOU."
+		},
+		{
+			"id": "escrow",
+			"title": "Funds & Escrow",
+			"text": "Funds are held in an on-chain Subbit smart contract, not by the provider. Your ADA remains escrowed and under your control until authorized via signed IOUs. You may add funds to an open channel at any time. The provider cannot access funds beyond what you have explicitly authorized."
+		},
+		{
+			"id": "close-period",
+			"title": "Close Period",
+			"text": "When you close a channel, a settlement window begins (defined at channel opening; for this service it is 1 hour). During this window, the provider may submit a settlement transaction claiming authorized funds. If the provider does not settle within the window, you may expire the channel and recover all escrowed funds. If the provider goes offline or becomes unresponsive, this mechanism ensures you can always recover your funds."
+		},
+		{
+			"id": "promise",
+			"title": "Promise, Not Enforcement",
+			"text": "These terms are a good-faith agreement between you and the provider. They are not enforced by the on-chain Subbit smart contract. The validator contract only enforces escrow and settlement mechanics — your funds cannot be taken without your signed authorization. These terms govern the service layer: what each request costs, how changes are communicated, and the expected behavior of both parties."
+		},
+		{
+			"id": "changes",
+			"title": "Changes to Terms",
+			"text": "The provider may update these terms. When updated, a grace period begins (defined above) during which previous terms remain in effect. You will be notified of changes and may: (a) accept immediately and continue on new terms when the grace period ends, (b) decline and close your channel to recover unspent funds, or (c) take no action — after the grace period, new terms apply automatically. The provider will not retroactively charge for services already rendered under previous terms."
+		},
+		{
+			"id": "consumer-responsibility",
+			"title": "Consumer Responsibilities",
+			"text": "You are responsible for securely backing up your IOU signing key, which is fixed for the lifetime of a channel. You must keep your channel tag unique per signing key to prevent cross-channel claims. Loss of your signing key may result in inability to authorize further requests or close the channel through the standard flow."
+		},
+		{
+			"id": "provider-rights",
+			"title": "Provider Rights",
+			"text": "The provider may refuse to serve requests from channels that are ill-formed, do not match the agreed parameters (provider key, currency, close period), or violate these terms. The provider may also rate-limit or temporarily suspend service for operational reasons."
+		},
+		{
+			"id": "disclaimer",
+			"title": "Disclaimer",
+			"text": "Data is provided \"as is\" without warranties of any kind. The provider does not guarantee uninterrupted availability or the accuracy of oracle data. Validation, interpretation, and usage of data remain the sole responsibility of the consumer."
+		}
+	]
+}

@@ -1,0 +1,6 @@
+[submodule "services/subbit-man-js"]
+	path = services/subbit-man-js
+	url = https://github.com/orcfax/subbit-man-js
+[submodule "services/subbit-xyz"]
+	path = services/subbit-xyz
+	url = https://github.com/orcfax/subbit-xyz

@@ -1,0 +1,38 @@
+# Dependencies (reinstalled in Docker)
+node_modules/
+**/node_modules/
+
+# Build outputs
+.svelte-kit/
+build/
+.output/
+dist/
+
+# Environment (set via deployment platform)
+.env
+.env.*
+!.env.example
+
+# Git
+.git/
+.gitmodules
+
+# OS
+.DS_Store
+Thumbs.db
+
+# AI / LLM docs
+context/
+tasks/
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+.pnpm-debug.log*
+
+# Keys
+keys/
