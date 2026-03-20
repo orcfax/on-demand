@@ -15,8 +15,8 @@ This guide covers everything needed to clone, configure, run, and deploy the Orc
 The repository uses two git submodules under `services/`. You must initialize them when cloning:
 
 ```bash
-git clone --recurse-submodules https://github.com/orcfax/odapi-portal-prototype.git
-cd odapi-portal-prototype
+git clone --recurse-submodules https://github.com/orcfax/on-demand.git
+cd on-demand
 ```
 
 If you already cloned without `--recurse-submodules`:

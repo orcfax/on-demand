@@ -7,8 +7,8 @@ Thank you for your interest in contributing to the Orcfax On-Demand portal. This
 See the [Getting Started guide](docs/getting-started.md) for full setup instructions. The short version:
 
 ```bash
-git clone --recurse-submodules https://github.com/orcfax/odapi-portal-prototype.git
-cd odapi-portal-prototype
+git clone --recurse-submodules https://github.com/orcfax/on-demand.git
+cd on-demand
 pnpm install
 cp .env.example .env   # fill in your values
 pnpm dev

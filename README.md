@@ -25,7 +25,7 @@ Users connect a Cardano wallet, open an L2 payment channel with escrowed ADA, an
 ## Project Structure
 
 ```
-odapi-portal-prototype/
+on-demand/
 ├── src/
 │   ├── routes/              # SvelteKit pages and API endpoints
 │   │   ├── app/             # Main application (feeds table, account setup)
@@ -52,8 +52,8 @@ See [docs/getting-started.md](docs/getting-started.md) for the full setup guide.
 
 ```bash
 # Clone with submodules
-git clone --recurse-submodules https://github.com/orcfax/odapi-portal-prototype.git
-cd odapi-portal-prototype
+git clone --recurse-submodules https://github.com/orcfax/on-demand.git
+cd on-demand
 
 # Install dependencies
 pnpm install
